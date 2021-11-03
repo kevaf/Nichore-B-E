@@ -12,6 +12,20 @@ class ArtGallery(models.Model):
     price = models.IntegerField(null=True, blank=True)
     pub_date = models.DateTimeField(auto_now_add=True)
 
+    def __str__(self):
+        return f'{self.name} art'
+
+    def create_artgallery(self):
+        self.save()
+
+    def delete_artgallery(self):
+        self.delete()
+
+    @classmethod
+    def find_artgallery(cls, artgallery_id):
+        return cls.objects.filter(id=artgallery_id)
+
+
 class Profile(models.model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='profile')
     about = models.TextField(max_length=254, blank=True)
