@@ -26,7 +26,7 @@ class ArtGallery(models.Model):
         return cls.objects.filter(id=artgallery_id)
 
 
-class Profile(models.model):
+class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='profile')
     about = models.TextField(max_length=254, blank=True)
     profile_picture = CloudinaryField('image')
