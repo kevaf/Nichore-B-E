@@ -11,9 +11,10 @@ class ArtGallery(models.Model):
     artist = models.ForeignKey("Profile", on_delete=models.CASCADE, related_name='art')
     price = models.IntegerField(null=True, blank=True)
     pub_date = models.DateTimeField(auto_now_add=True)
+    artimage = CloudinaryField('image')
 
     def __str__(self):
-        return f'{self.name} art'
+        return f'{self.artist} art'
 
     def create_artgallery(self):
         self.save()

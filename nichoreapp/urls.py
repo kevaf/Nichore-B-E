@@ -8,5 +8,4 @@ urlpatterns=[
     url(r'api/all-art/art-id/(?P<pk>[0-9]+)/$', views.ArtGalleryDets.as_view()),
     url(r'^api/profiles/$', views.ProfileList.as_view()),
     url(r'api/profiles/profile-id/(?P<pk>[0-9]+)/$', views.ProfileDets.as_view()),
-
 ]
