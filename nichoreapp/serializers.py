@@ -6,7 +6,7 @@ from django.contrib.auth.models import User
 class ArtGallerySerializer(serializers.ModelSerializer):
     class Meta:
         model = ArtGallery
-        fields = ('title', 'artist', 'price', 'pub_date')
+        fields = ('title', 'artist', 'price', 'pub_date', 'artimage')
 
 class ProfileSerializer(serializers.ModelSerializer):
     class Meta:
